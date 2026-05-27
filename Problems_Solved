@@ -1,0 +1,27 @@
+class Solution {
+public:
+    bool detectCapitalUse(string word) {
+      int cnt = 0;
+      int cnt1 = 0;  
+      for(char c : word){
+        // cout<<int(c)<<endl;
+        if(int(c)<=90){
+            cnt++;  
+        }
+        if(int(c)>=97){
+            cnt1++;
+        }
+      }
+    // cout<<cnt1<<endl;
+    if(cnt==word.size() || cnt1==word.size()){
+        return true; 
+    }
+    char k = toupper(word[0]);
+    if(cnt==1 && k==word[0]){
+        return true; 
+    }
+    return false;
+    }
+};
+
+// Simple solution where i can just check the counts of upper and lower case letters. 
